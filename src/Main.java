@@ -41,11 +41,34 @@ public class Main {
         System.out.println(dq);
 
         System.out.println("Hash Map");
-        HashMap<Integer, String> map = new HashMap<>();
-        map.put(101, "Ravi");
-        map.put(102, "neha");
-        map.put(103, "Amit");
-        System.out.println(map);
+        HashMap<String, Integer> scores = new HashMap<>();
+        scores.put("Ravi", 44);
+        scores.put("neha", 70);
+        scores.put("Amit", 91);
+        System.out.println(scores);
+
+        Set<String> keySet = scores.keySet();
+        for (String key: scores.keySet()){
+            System.out.println(key + "->" + scores.get(key));
+        }
+
+        for(Map.Entry<String, Integer> entry : scores.entrySet()){
+            System.out.println(entry.getKey() + "->" + entry.getValue());
+        }
+
+        //Employees emp1 = new Employees("Rakesh",101,"Dev",10_00_000);
+        Map<Integer, Employees> emp = new HashMap<>();
+        emp.put(1, new Employees("Rakesh",101,"Dev",10_00_000));
+        System.out.println(emp);
+
+        Set<Map.Entry<Integer,Employees>> empEntrySet = emp.entrySet();
+
+        for(Map.Entry<Integer,Employees> entry : empEntrySet){
+            System.out.println("key: " + entry.getKey());
+            System.out.println("value: " + entry.getValue());
+        }
+
+
 
     }
 }
